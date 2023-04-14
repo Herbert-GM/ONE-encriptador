@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="texto">Texto a encriptar:</label>
+        <input type="text" id="texto" name="texto"><br>
+
+        <label for="encriptado">Texto encriptado:</label>
+        <input type="text" id="encriptado" name="encriptado" readonly><br>
+
+        <button type="button" onclick="encriptar()">Encriptar</button>
+        <button type="button" onclick="desencriptar()">Desencriptar</button>
+    </form>
+
+    <script>
+        function encriptar() {
+            const texto = document.getElementById("texto").value;
+            let encriptado = texto;
+
+            encriptado = encriptado.replace(/e/g, "enter");
+            encriptado = encriptado.replace(/i/g, "imes");
+            encriptado = encriptado.replace(/a/g, "ai");
+            encriptado = encriptado.replace(/o/g, "ober");
+            encriptado = encriptado.replace(/u/g, "ufat");
+
+            document.getElementById("encriptado").value = encriptado;
+        }
+
+        function desencriptar() {
+            const texto = document.getElementById("texto").value;
+            let encriptado = texto;
+
+            encriptado = encriptado.replace(/enter/g, "e");
+            encriptado = encriptado.replace(/imes/g, "i");
+            encriptado = encriptado.replace(/ai/g, "a");
+            encriptado = encriptado.replace(/ober/g, "o");
+            encriptado = encriptado.replace(/ufat/g, "u");
+
+            document.getElementById("encriptado").value = encriptado;
+        }
+    </script>
+</body>
+</html>
